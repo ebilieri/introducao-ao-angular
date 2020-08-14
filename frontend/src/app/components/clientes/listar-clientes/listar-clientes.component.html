@@ -1,0 +1,27 @@
+<div class="container">
+
+  <h1 class="h3">Clientes</h1>
+  <button class="btn btn-primary mb-2" (click)="adicionarCliente()">Adicionar</button>
+  <table class="table table-striped table-light">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Idade</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of clientes">
+        <th scope="row">{{c.id}}</th>
+        <td>{{c.nome}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.idade}}</td>
+        <td><button class="btn btn-success btn-sm" (click)="editarCliente(c)">Editar</button></td>
+        <td><button class="btn btn-danger btn-sm" (click)="deletarCliente(c)">Excluir</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

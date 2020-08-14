@@ -1,0 +1,71 @@
+<div class="container">
+
+    <h1 class="h3">Cadastro de cliente</h1>
+
+    <div class="row">
+
+        <div class="text-center col-md-6">
+            <form class="form-signin">
+
+                <!--Nome-->
+                <label for="inputNome" class="sr-only">Nome</label>
+                <input type="text" id="inputNome" name="nome" class="form-control mb-1" [ngClass]="{
+                      'is-invalid':nome.invalid && (nome.dirty || nome.touched),
+                      'is-valid':nome.valid && (nome.dirty || nome.touched)
+                     }" placeholder="Informe o seu nome" [(ngModel)]="cliente.nome" #nome="ngModel" required />
+
+                <div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+                    <div *ngIf="nome.errors.required">
+                        Nome é de preenchimento obrigatório
+                    </div>
+                </div>
+
+                <!--Email-->
+                <label for="inputEmail" class="sr-only">Email</label>
+                <input type="email" id="inputEmail" name="email" class="form-control mb-1" [ngClass]="{
+                      'is-invalid':email.invalid && (email.dirty || email.touched),
+                      'is-valid':email.valid && (email.dirty || email.touched)
+                     }" placeholder="Informe o seu email" [(ngModel)]="cliente.email" #email="ngModel" email
+                    required />
+
+                <div class="invalid-feedback mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors.required">
+                        Email é de preenchimento obrigatório
+                    </div>
+                    <div *ngIf="email.errors.email">
+                        Email não está no formato correto
+                    </div>
+                </div>
+
+                <!--Idade-->
+                <label for="inputIdade" class="sr-only">Idade</label>
+                <input type="number" id="inputIdade" name="idade" class="form-control mb-1" [ngClass]="{
+                      'is-invalid':idade.invalid && (idade.dirty || idade.touched),
+                      'is-valid':idade.valid && (idade.dirty || idade.touched)
+                     }" placeholder="Informe o sua idade" [(ngModel)]="cliente.idade" #idade="ngModel" required />
+
+                <div class="invalid-feedback mb-2" *ngIf="idade.invalid && (idade.dirty || idade.touched)">
+                    <div *ngIf="idade.errors.required">
+                        Idade é de preenchimento obrigatório
+                    </div>
+                </div>
+
+
+                <!--botão salvar-->
+                <button class="btn btn-lg btn-primary btn-block mb-2" type="submit" (click)="cadastrarCliente()"
+                    [disabled]="ativar_spinner">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                        *ngIf="ativar_spinner"></span>
+                    Salvar
+                </button>
+                <div class="mb-2"><a [routerLink]='["/clientes"]'>Voltar</a></div>
+
+                <!--Mensagem Validação-->
+                <div class="alert alert-danger" *ngIf="mensagem">
+                    {{mensagem}}
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

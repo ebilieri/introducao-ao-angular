@@ -1,0 +1,28 @@
+{
+  "clientes": [
+    {
+      "nome": "Emerson Claudelino",
+      "email": "ebilieri@hotmail.com",
+      "idade": 4,
+      "id": 1
+    },
+    {
+      "nome": "Emerson Claudelino",
+      "email": "ebilieri@hotmail.com",
+      "idade": 2,
+      "id": 3
+    },
+    {
+      "nome": "Emerson Claudelino",
+      "email": "ebilieri@hotmail.com",
+      "idade": 445,
+      "id": 5
+    },
+    {
+      "nome": "qwqw",
+      "email": "2",
+      "idade": 4,
+      "id": 6
+    }
+  ]
+}
