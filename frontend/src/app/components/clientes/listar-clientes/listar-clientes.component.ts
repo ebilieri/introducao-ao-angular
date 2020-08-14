@@ -44,9 +44,9 @@ export class ListarClientesComponent implements OnInit {
       this.clienteService.deletar(cliente.id).subscribe(
         dataResult => {
           console.log(dataResult);
-          //window.location.reload();
+          // reload component
           this.ngOnInit();
-          //this.router.navigate(['/clientes']);
+          // mostar aviso
           this.toast.error("cliente removido com sucesso", "Excluído!");
         },
         erro => {
