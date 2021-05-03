@@ -24,5 +24,12 @@
       "idade": 45,
       "id": 6
     }
+  ],
+  "usuarios":[
+    {
+      "id":1,
+      "usuario": "jose",
+      "senha": "1234"
+    }
   ]
 }
